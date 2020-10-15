@@ -1,5 +1,0 @@
-Credentials cache: API:C6D7E4D3-C432-462A-A3B8-C51D6AA9152C
-        Principal: pbasin@42.FR
-
-  Issued                Expires             Flags    Principal
-Oct 12 14:11:30 2020  Oct 19 14:11:20 2020  FPIA   krbtgt/42.FR@42.FR
