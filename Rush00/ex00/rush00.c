@@ -1,47 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush.c                                             :+:      :+:    :+:   */
+/*   rush00.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pbasin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: bguiglie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/17 09:10:12 by pbasin            #+#    #+#             */
-/*   Updated: 2020/10/17 12:48:22 by pbasin           ###   ########.fr       */
+/*   Created: 2020/10/17 09:24:36 by bguiglie          #+#    #+#             */
+/*   Updated: 2020/10/17 11:42:28 by bguiglie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+
 void	ft_putchar(char c);
 
-void	ft_print_o(int x, int y, int i, int j)
+void	ft_side(int i, int y)
 {
-	if ((i == 1 || i == x) && (j == 1 || j == y))
-	{
+	if (i == 1 || i == y)
 		ft_putchar('o');
-	}
-}
-
-void	ft_print_dash(int x, int y, int i, int j)
-{
-	if ((i > 1 && i < x) && (j == 1 || j == y))
-	{
-		ft_putchar('-');
-	}
-}
-
-void	ft_print_v_bar(int x, int y, int i, int j)
-{
-	if ((i == 1 || i == x) && (j > 1 && j < y))
-	{
+	else
 		ft_putchar('|');
-	}
-}
-
-void	ft_print_space(int x, int y, int i, int j)
-{
-	if ((i > 1 && i < x) && (j > 1 && j < y))
-	{
-		ft_putchar(' ');
-	}
 }
 
 void	rush(int x, int y)
@@ -50,19 +28,23 @@ void	rush(int x, int y)
 	int j;
 
 	i = 1;
-	j = 1;
-	while (j <= y)
+	while (i <= y)
 	{
-		while (i != x + 1)
+		j = 1;
+		while (j <= x)
 		{
-			ft_print_o(x, y, i, j);
-			ft_print_dash(x, y, i, j);
-			ft_print_v_bar(x, y, i, j);
-			ft_print_space(x, y, i, j);
-			i++;
+			if (j == 1 || j == x)
+				ft_side(i, y);
+			else
+			{
+				if (i == 1 || i == y)
+					ft_putchar('-');
+				else
+					ft_putchar(' ');
+			}
+			j++;
 		}
+		i++;
 		ft_putchar('\n');
-		i = 1;
-		j++;
 	}
 }
