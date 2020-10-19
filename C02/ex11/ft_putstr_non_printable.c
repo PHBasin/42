@@ -6,7 +6,7 @@
 /*   By: pbasin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 18:15:29 by pbasin            #+#    #+#             */
-/*   Updated: 2020/10/18 09:18:39 by pbasin           ###   ########.fr       */
+/*   Updated: 2020/10/19 07:00:17 by pbasin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_print_hex(char c)
+void	ft_print_hex(unsigned char c)
 {
-	char base[17];
+	char *base;
 
 	base = "0123456789abcdef";
 	ft_putchar(base[c / 16]);
