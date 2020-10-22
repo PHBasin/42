@@ -18,3 +18,6 @@ ex00: OK | ex01: OK | ex02: OK | ex03: OK | ex04: OK | ex05: OK | ex06: OK | ex0
 
 ## C 03
 ex00: OK | ex01: OK | ex02: OK | ex03: OK | ex04: OK | ex05: OK
+
+## C 04
+ex00: OK | ex01: OK | ex02: OK | ex03: KO | ex04: KO | ex05: Nothing turned in
