@@ -6,11 +6,11 @@
 /*   By: pbasin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 18:09:58 by pbasin            #+#    #+#             */
-/*   Updated: 2020/10/26 14:34:53 by pbasin           ###   ########.fr       */
+/*   Updated: 2020/10/26 18:13:09 by pbasin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
 	int neg;
 	int n;
