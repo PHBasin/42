@@ -6,7 +6,7 @@
 /*   By: pbasin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 16:29:24 by pbasin            #+#    #+#             */
-/*   Updated: 2020/10/26 18:12:37 by pbasin           ###   ########.fr       */
+/*   Updated: 2020/10/26 19:38:43 by pbasin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ int		ft_check_base(char *base)
 	while (base[i])
 	{
 		j = i + 1;
-		if (base[i] == 43 || base[i] == 45 || base[i] == 32)
+		if (base[i] == 43 || base[i] == 45 || base[i] == 32
+				|| (*str > 8 && *str < 14))
 			return (0);
 		while (base[j])
 		{
