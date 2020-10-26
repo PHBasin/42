@@ -6,28 +6,25 @@
 /*   By: pbasin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 18:10:37 by pbasin            #+#    #+#             */
-/*   Updated: 2020/10/21 15:00:09 by pbasin           ###   ########.fr       */
+/*   Updated: 2020/10/26 16:27:51 by pbasin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_rev_int_tab(char *tab, int size)
+void	ft_putchar(char c)
 {
-	int first;
-	int last;
-	int temp;
+	write(1, &c, 1);
+}
 
-	first = 0;
-	last = size - 1;
-	while (first != size / 2)
-	{
-		temp = tab[first];
-		tab[first] = tab[last];
-		tab[last] = temp;
-		first++;
-		last--;
-	}
+int		ft_strlen(char *str)
+{
+	int n;
+
+	n = 0;
+	while (str[n])
+		n++;
+	return (n);
 }
 
 int		ft_check_base(char *base)
@@ -36,60 +33,41 @@ int		ft_check_base(char *base)
 	int j;
 
 	i = 0;
-	while (*base)
+	while (base[i])
 	{
 		j = i + 1;
-		if (*base == 43 || *base == 45)
+		if (base[i] == 43 || base[i] == 45)
 			return (0);
 		while (base[j])
 		{
-			if (*base == base[j])
+			if (base[i] == base[j])
 				return (0);
 			j++;
 		}
-		base++;
 		i++;
 	}
 	return (i);
 }
 
-int		ft_calc_result(int nbr, int nb_base, char *base, char *result)
-{
-	int i;
-	int j;
-	int reminder;
-
-	i = 1;
-	j = 0;
-	while (i == 1)
-	{
-		reminder = nbr % nb_base;
-		nbr /= nb_base;
-		result[j] = base[reminder];
-		j++;
-		if (nbr == 0)
-			i = 0;
-	}
-	result[j] = '\0';
-	return (j);
-}
-
 void	ft_putnbr_base(int nbr, char *base)
 {
-	int		j;
-	int		nb_base;
-	char	result[32];
+	unsigned int	base_size;
+	unsigned int	nb;
 
-	nb_base = ft_check_base(base);
-	if (nb_base > 1)
+	if (ft_check_base(base) > 1)
 	{
+		base_size = ft_strlen(base);
 		if (nbr < 0)
 		{
-			nbr = -nbr;
-			write(1, "-", 1);
+			nb = -nbr;
+			ft_putchar('-');
 		}
-		j = ft_calc_result(nbr, nb_base, base, result);
-		ft_rev_int_tab(result, j);
-		write(1, result, j);
+		else
+			nb = nbr;
+		if (nb >= base_size)
+		{
+			ft_putnbr_base(nb / base_size, base);
+		}
+		ft_putchar(base[nb % base_size]);
 	}
 }
