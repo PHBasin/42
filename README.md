@@ -25,5 +25,8 @@ ex00: OK | ex01: OK | ex02: OK | ex03: OK | ex04: OK | ex05: Timeout
 ## [C 05](https://github.com/PHBasin/42/tree/main/C05)
 ex00: OK | ex01: OK | ex02: OK | ex03: OK | ex04: OK | ex05: OK | ex06: OK | ex07: OK | ex08: Nothing turned in
 
+## [Rush 01](https://github.com/PHBasin/42/tree/main/Rush01)
+ex00: KO
+
 ## [C 06](https://github.com/PHBasin/42/tree/main/C06)
 ex00: OK | ex01: OK | ex02: OK | ex03: OK
