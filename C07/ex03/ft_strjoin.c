@@ -6,7 +6,7 @@
 /*   By: pbasin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 07:37:10 by pbasin            #+#    #+#             */
-/*   Updated: 2020/10/27 11:41:22 by pbasin           ###   ########.fr       */
+/*   Updated: 2020/10/28 16:17:38 by pbasin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	i = 0;
 	while (i < size)
 		str_size += ft_strlen(strs[i++]);
-	output = malloc(sizeof(*output) * (str_size + (sep_size * (size - 1))));
+	output = malloc(sizeof(*output) * (str_size + 1 + (sep_size * (size - 1))));
 	if (!output)
 		return (NULL);
 	i = 0;
@@ -56,5 +56,6 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 		if (i < size)
 			output = ft_strcat(output, sep);
 	}
+	output[str_size + (sep_size * (size - 1))] = '\0';
 	return (output);
 }
