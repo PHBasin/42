@@ -6,7 +6,7 @@
 /*   By: pbasin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 14:24:59 by pbasin            #+#    #+#             */
-/*   Updated: 2020/10/28 15:20:48 by pbasin           ###   ########.fr       */
+/*   Updated: 2020/11/03 18:22:24 by phbasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 
 # include <unistd.h>
 
-typedef int	t_bool;
-
-# define EVEN(x) x % 2 == 0
-# define TRUE 1
+typedef char	t_bool;
 # define FALSE 0
-# define EVEN_MSG "I have an even number of arguments."
-# define ODD_MSG "I have an odd number of arguments."
+# define TRUE 1
+
 # define SUCCESS 0
+# define EVEN_MSG "I have an even number of arguments.\n"
+# define ODD_MSG "I have an odd number of arguments.\n"
+
+# define EVEN(X) ((X % 2) ? 0 : 1)
 
 #endif
