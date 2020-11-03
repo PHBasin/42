@@ -6,29 +6,29 @@
 /*   By: pbasin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 16:20:31 by pbasin            #+#    #+#             */
-/*   Updated: 2020/11/03 17:32:15 by phbasin          ###   ########.fr       */
+/*   Updated: 2020/11/03 18:49:39 by phbasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "ft_stock_str.h"
 
-int		ft_strlen()
+int					ft_strlen(char *str)
 {
-	int n;
+	int	n;
 
 	n = 0;
 	while (str[n])
 		n++;
-	return(n);
+	return (n);
 }
 
-char	ft_strdup(char *src)
+char				ft_strdup(char *src)
 {
 	char	dst;
 	int		i;
 
-	if (!(dst = malloc(sizeof(char) * ft_strlen(src) + 1));
+	dst = malloc(sizeof(char) * ft_strlen(src) + 1);
+	if (!dst)
 		return (NULL);
 	i = 0;
 	while (src[i])
@@ -40,7 +40,7 @@ char	ft_strdup(char *src)
 	return (dst);
 }
 
-struct	s_stock_str *ft_strs_to_tab(int ac, char **av)
+struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 {
 	t_stock_str	*t;
 	int			i;
