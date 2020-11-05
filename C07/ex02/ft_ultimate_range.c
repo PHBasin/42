@@ -6,27 +6,32 @@
 /*   By: pbasin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 07:36:52 by pbasin            #+#    #+#             */
-/*   Updated: 2020/10/28 18:15:32 by pbasin           ###   ########.fr       */
+/*   Updated: 2020/11/03 18:58:38 by phbasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int ft_ultimate_range(int **range, int min, int max)
+int	ft_ultimate_range(int **range, int min, int max)
 {
 	int i;
+	int len;
 
+	len = max - min;
 	if (min >= max)
 	{
 		*range = 0;
 		return (0);
 	}
-	*range = malloc(sizeof(**range) * (max - min));
+	*range = malloc(sizeof(**range) * len);
+	if (!*range)
+		return (-1);
 	i = 0;
-	while (i < max - min)
+	while (min < max)
 	{
-		range[0][i] = min + i;
+		*range[i] = min;
+		min++;
 		i++;
 	}
-	return (i);
+	return (len);
 }
