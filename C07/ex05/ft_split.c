@@ -6,7 +6,7 @@
 /*   By: phbasin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 10:05:07 by phbasin           #+#    #+#             */
-/*   Updated: 2020/11/13 11:21:42 by phbasin          ###   ########.fr       */
+/*   Updated: 2020/11/13 14:24:05 by phbasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ char	**ft_split(char *str, char *charset)
 {
 	int i;
 	int j;
-	char *sep;
+	char *output;
 
-	malloc(sizeof(*sep) * ft_strlen(str));
+	output = malloc(sizeof(*output) * ft_strlen(str));
 	if (ft_strlen(str) > 0)
 	{
 		i = 0;
