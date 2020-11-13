@@ -1,16 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: phbasin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/13 10:05:07 by phbasin           #+#    #+#             */
+/*   Updated: 2020/11/13 11:21:42 by phbasin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
-int		ft_index_sep(char *str, char c)
+int		ft_is_sep(char *str, char c)
 {
-	int n;
-
-	n = 0;
-	while (str[n])
-	{
-		if (str[n] == c)
-			return (n)
-		n++
-	}
+	while (*str)
+		if (*str++ == c)
+			return (1);
 	return (0);
 }
 
