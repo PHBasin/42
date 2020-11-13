@@ -6,7 +6,7 @@
 /*   By: phbasin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 10:05:07 by phbasin           #+#    #+#             */
-/*   Updated: 2020/11/13 14:24:05 by phbasin          ###   ########.fr       */
+/*   Updated: 2020/11/13 17:42:51 by phbasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,30 +20,72 @@ int		ft_is_sep(char *str, char c)
 	return (0);
 }
 
-int		ft_strlen(char *str)
+int		ft_sep_nbr(char *str, char *charset)
 {
 	int n;
 
 	n = 0;
-	while (str[n])
-		n++;
+	while (*str)
+		if (ft_is_sep(charset, *str++))
+			n++;
 	return (n);
 }
+
+char	*ft_index_sep(char *str, char *charset, char *sep)
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	while (str[j])
+	{
+		if (ft_is_sep(charset, str[j]))
+			sep[i++] = j +;
+	return (sep);
+}
+
+
+/*
+int		ft_sep_nbr(char *str, char *charset, char *sep)
+{
+	int b;
+	int n;
+
+	b = 0;
+	n = 0;
+	while (*str)
+	{
+		if (!ft_is_sep(charset, *str))
+		{
+			if (b == 0)
+				n += 1;
+			b = 1;
+		}
+		else
+			b = 0;
+		str++;
+	}
+	return (n);
+}
+*/
 
 char	**ft_split(char *str, char *charset)
 {
 	int i;
 	int j;
-	char *output;
+	char **output;
+	char *sep;
 
-	output = malloc(sizeof(*output) * ft_strlen(str));
-	if (ft_strlen(str) > 0)
+	sep = malloc(sizeof(*sep) * ft_sep_nbr(str, charset));
+	while (*str)
 	{
-		i = 0;
-		if (ft_strlen(charset) > 0)
-			while (charset[i])
-				sep[j++] = ft_index_sep(str, charset[i++]);
-		else
-			return (str)
+		if (!ft_is_sep(charset, *str))
+		{
+			output[i][j] = *str;
+			j++;
+		}
+		str++;
 	}
+	return (0);
 }
