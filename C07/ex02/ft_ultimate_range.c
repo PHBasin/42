@@ -6,7 +6,7 @@
 /*   By: pbasin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 07:36:52 by pbasin            #+#    #+#             */
-/*   Updated: 2020/11/03 18:58:38 by phbasin          ###   ########.fr       */
+/*   Updated: 2020/11/10 10:26:10 by phbasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,9 @@ int	ft_ultimate_range(int **range, int min, int max)
 	if (!*range)
 		return (-1);
 	i = 0;
-	while (min < max)
+	while (i < len)
 	{
-		*range[i] = min;
-		min++;
+		range[0][i] = min + i;
 		i++;
 	}
 	return (len);

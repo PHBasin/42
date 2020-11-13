@@ -6,7 +6,7 @@
 /*   By: pbasin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 07:37:45 by pbasin            #+#    #+#             */
-/*   Updated: 2020/10/28 11:19:40 by pbasin           ###   ########.fr       */
+/*   Updated: 2020/11/11 20:55:10 by phbasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int		ft_num_size(int n, int size_base_to)
 	}
 	else
 		i = 1;
-	while (n > size_base_to)
+	while (n >= size_base_to)
 	{
 		n /= size_base_to;
 		i++;

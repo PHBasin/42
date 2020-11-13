@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pbasin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: phbasin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/26 07:37:10 by pbasin            #+#    #+#             */
-/*   Updated: 2020/11/03 20:36:01 by phbasin          ###   ########.fr       */
+/*   Created: 2020/11/11 18:57:54 by phbasin           #+#    #+#             */
+/*   Updated: 2020/11/13 10:00:41 by phbasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_strlen(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -24,13 +24,17 @@ int		ft_strlen(char *str)
 
 char	*ft_strcat(char *dst, char *src)
 {
-	char *d;
+	int i;
+	int j;
 
-	d = dst;
-	while (*d)
-		d++;
-	while (*src)
-		*d++ = *src++;
+	i = ft_strlen(dst);
+	j = 0;
+	while (src[j])
+	{
+		dst[i + j] = src[j];
+		j++;
+	}
+	dst[i + j] = '\0';
 	return (dst);
 }
 
@@ -46,7 +50,9 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	i = 0;
 	while (i < size)
 		str_size += ft_strlen(strs[i++]);
-	output = malloc(sizeof(*output) * (str_size + 1 + (sep_size * (size - 1))));
+	if (size > 0)
+		str_size += sep_size * (size - 1);
+	output = malloc(sizeof(*output) * str_size);
 	if (!output)
 		return (NULL);
 	i = 0;
@@ -56,6 +62,6 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 		if (i < size)
 			output = ft_strcat(output, sep);
 	}
-	output[str_size + (sep_size * (size - 1))] = '\0';
+	output[str_size] = '\0';
 	return (output);
 }
