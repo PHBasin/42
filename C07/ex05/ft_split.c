@@ -6,7 +6,7 @@
 /*   By: phbasin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 10:05:07 by phbasin           #+#    #+#             */
-/*   Updated: 2020/11/13 17:42:51 by phbasin          ###   ########.fr       */
+/*   Updated: 2020/11/15 15:50:48 by phbasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,34 +20,31 @@ int		ft_is_sep(char *str, char c)
 	return (0);
 }
 
-int		ft_sep_nbr(char *str, char *charset)
+int		ft_wordlen(char *str, char *charset)
 {
 	int n;
 
 	n = 0;
-	while (*str)
-		if (ft_is_sep(charset, *str++))
-			n++;
+	while (str[n] && !ft_is_sep(charset, str[n]))
+		n++;
 	return (n);
 }
 
-char	*ft_index_sep(char *str, char *charset, char *sep)
+char	*ft_wordcpy(char *src, char *dst, int n)
 {
 	int i;
-	int j;
 
 	i = 0;
-	j = 0;
-	while (str[j])
+	while (i < n)
 	{
-		if (ft_is_sep(charset, str[j]))
-			sep[i++] = j +;
-	return (sep);
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (dst);
 }
 
-
-/*
-int		ft_sep_nbr(char *str, char *charset, char *sep)
+int		ft_wordnbr(char *str, char *charset)
 {
 	int b;
 	int n;
@@ -68,24 +65,29 @@ int		ft_sep_nbr(char *str, char *charset, char *sep)
 	}
 	return (n);
 }
-*/
 
 char	**ft_split(char *str, char *charset)
 {
-	int i;
-	int j;
-	char **output;
-	char *sep;
+	int		i;
+	int		n;
+	int		size;
+	char	**output;
 
-	sep = malloc(sizeof(*sep) * ft_sep_nbr(str, charset));
-	while (*str)
+	i = 0;
+	size = ft_wordnbr(str, charset);
+	output = malloc(sizeof(*output) * (size + 1));
+	while (i < size)
 	{
-		if (!ft_is_sep(charset, *str))
-		{
-			output[i][j] = *str;
-			j++;
-		}
-		str++;
+		while (*str && ft_is_sep(charset, *str))
+			str++;
+		n = ft_wordlen(str, charset);
+		output[i] = malloc(sizeof(**output) * (n + 1));
+		if (!output[i])
+			return (NULL);
+		ft_wordcpy(str, output[i], n);
+		str += n;
+		i++;
 	}
-	return (0);
+	output[i] = '\0';
+	return (output);
 }
