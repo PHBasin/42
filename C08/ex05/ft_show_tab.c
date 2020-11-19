@@ -6,11 +6,12 @@
 /*   By: phbasin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 17:32:40 by phbasin           #+#    #+#             */
-/*   Updated: 2020/11/18 19:14:45 by phbasin          ###   ########.fr       */
+/*   Updated: 2020/11/19 09:40:08 by phbasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include "ft_stock_str.h"
 
 void	ft_putchar(char c)
 {
@@ -47,9 +48,7 @@ void	ft_show_tab(struct s_stock_str *par)
 	int i;
 
 	i = 0;
-	if (!par)
-		return (NULL);
-	while (par[i])
+	while (par[i].str)
 	{
 		ft_putstr(par[i].str);
 		ft_putchar('\n');
