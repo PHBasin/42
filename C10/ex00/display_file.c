@@ -6,21 +6,20 @@
 /*   By: phbasin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 16:11:07 by phbasin           #+#    #+#             */
-/*   Updated: 2020/11/21 07:02:40 by phbasin          ###   ########.fr       */
+/*   Updated: 2020/11/21 07:56:30 by phbasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>	// write, read & close
-#include <fcntl.h>	// open
+#include <unistd.h>
+#include <fcntl.h>
 
-void ft_putstr(int fd, char *str)
+void	ft_putstr(int fd, char *str)
 {
 	while (*str)
 		write(fd, str++, 1);
 }
 
-int ft_displayfile(char *path)
+int		ft_displayfile(char *path)
 {
 	int		fd;
 	int		len;
@@ -35,7 +34,7 @@ int ft_displayfile(char *path)
 	return (len);
 }
 
-int main(int argc, char *argv[])
+int		main(int argc, char *argv[])
 {
 	if (argc > 2)
 		ft_putstr(2, "Too many arguments.\n");
