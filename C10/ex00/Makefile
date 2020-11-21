@@ -6,7 +6,7 @@
 #    By: phbasin <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/06 09:09:57 by phbasin           #+#    #+#              #
-#    Updated: 2020/11/21 10:32:08 by phbasin          ###   ########.fr        #
+#    Updated: 2020/11/21 14:48:01 by phbasin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,5 @@ clean:
 
 fclean:		clean
 			rm -f ${NAME}
-
-re:			fclean all
 
 .PHONY:		all clean fclean re
