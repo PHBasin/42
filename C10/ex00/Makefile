@@ -6,7 +6,7 @@
 #    By: phbasin <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/06 09:09:57 by phbasin           #+#    #+#              #
-#    Updated: 2020/11/21 07:47:29 by phbasin          ###   ########.fr        #
+#    Updated: 2020/11/21 10:32:08 by phbasin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,10 @@ NAME	= ft_display_file
 SRCS	= ${wildcard *.c}
 OBJS	= ${SRCS:.c=.o}
 
-all:		${NAME}
-
 ${NAME}:	${OBJS}
-			${CC} ${CFLAGS} ${OBJS} -o ${NAME}
+			${CC} ${CFLAGS} -o ${NAME} ${OBJS}
+
+all:		${NAME}
 
 clean:		
 			rm -f ${OBJS}
