@@ -1,7 +1,7 @@
-## [Shell 00](https://github.com/PHBasin/42/tree/main/Shell00)
+[Shell 00](https://github.com/PHBasin/42/tree/main/Shell00)
 ex00: OK | ex01: OK | ex02: OK | ex03: OK | ex04: OK | ex05: OK | ex06: OK | ex07: OK | ex08: OK | ex09: OK
 
-## [Shell 01](https://github.com/PHBasin/42/tree/main/Shell01)
+[Shell 01](https://github.com/PHBasin/42/tree/main/Shell01)
 ex01: OK | ex02: OK | ex03: OK | ex04: OK | ex05: OK | ex06: OK | ex07: KO | ex08: Nothing turned in
 
 ## [C 00](https://github.com/PHBasin/42/tree/main/C00)
