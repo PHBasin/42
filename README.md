@@ -25,7 +25,6 @@ ex00: OK | ex01: OK | ex02: OK | ex03: OK | ex04: OK | ex05: OK | ex06: OK | ex0
 ## [C 06](https://github.com/PHBasin/42/tree/main/C06)
 ex00: OK | ex01: OK | ex02: OK | ex03: OK
 
-
 ## [Rush 00](https://github.com/PHBasin/42/tree/main/Rush00)
 ex00: KO
 
