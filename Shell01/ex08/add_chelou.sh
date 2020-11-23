@@ -1,7 +1,4 @@
 #!/bin/sh
-BASE_NBR1='’\"?!'
-BASE_NBR2='mrdoc'
-BASE_RSLT='gtaio luSnemf'
-
-NBR1=$(echo "obase=012345;ibase=$BASE_NBR1;$FT_NBR1" | bc)
-NBR2=$(echo "obase=012345;ibase=$BASE_NBR2;$FT_NBR2" | bc)
+NBR1=$(echo $FT_NBR1 | tr \'\\\\\"\?\! 01234)
+NBR2=$(echo $FT_NBR2 | tr mrdoc 01234)
+echo "obase=13; ibase=5; $NBR1+$NBR2" | bc | tr '0123456789ABC' 'gtaio luSnemf'
