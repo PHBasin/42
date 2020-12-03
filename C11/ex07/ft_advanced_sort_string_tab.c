@@ -6,7 +6,7 @@
 /*   By: phbasin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 16:24:47 by phbasin           #+#    #+#             */
-/*   Updated: 2020/12/03 23:10:52 by phbasin          ###   ########.fr       */
+/*   Updated: 2020/12/04 00:10:29 by phbasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ int		ft_strlen(char **str)
 	int n;
 
 	n = 0;
-	while(str[n])
+	while (str[n])
 		n++;
 	return (n);
 }
 
-void	ft_advanced_sort_string_tab(char **tab, int(*cmp)(char *, char *))
+void	ft_advanced_sort_string_tab(char **tab, int (*cmp)(char *, char *))
 {
 	int i;
 	int j;
