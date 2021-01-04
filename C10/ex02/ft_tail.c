@@ -6,7 +6,7 @@
 /*   By: phbasin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 09:17:30 by phbasin           #+#    #+#             */
-/*   Updated: 2020/12/01 11:14:45 by phbasin          ###   ########.fr       */
+/*   Updated: 2021/01/04 16:43:50 by phbasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_default_display(char *buf, int len)
 	{
 		n = 0;
 		while (n <= 10)
-			if (buf[--i] == '\n')
+		if (buf[--i] == '\n')
 				n++;
 		i++;
 		write(1, &buf[i], len - i);
